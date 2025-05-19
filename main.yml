@@ -1,0 +1,14 @@
+project:
+  name: Example project
+  codename: example-project
+
+buckets:
+  default-bucket:
+    access: common # can be common or personal
+    type: list     # can be list or dict
+    encrypt: false # can be false or true, default false
+
+triggers:
+ - "cmd : echo <text:str> : example.echo(text)"
+ - "sch : * * * * * : example.echo("Minute is gone")"
+ - "ait : example.get_time : no-provide" 

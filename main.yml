@@ -10,5 +10,5 @@ buckets:
 
 triggers:
  - "cmd : echo <text:str> : example.echo(text)"
- - "sch : * * * * * : example.echo("Minute is gone")"
+ - "sch : * * * * * : example.echo('Minute is gone')"
  - "ait : example.get_time : no-provide" 

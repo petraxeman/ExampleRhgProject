@@ -9,6 +9,6 @@ buckets:
     encrypt: false # can be false or true, default false
 
 triggers:
- - "cmd : echo <text:str> : example.echo(text)"
- - "sch : * * * * * : example.echo('Minute is gone')"
- - "ait : example.get_time : no-provide" 
+ - "cmd $ echo <text:str> $ example.echo(text)"
+ - "sch $ * * * * * $ example.echo('Minute is gone')"
+ - "ait $ example.get_time $ no-provide" 

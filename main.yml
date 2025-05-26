@@ -9,6 +9,24 @@ buckets:
     encrypt: false # can be false or true, default false
 
 triggers:
- - "cmd $ echo <text:str> $ example.echo(text)"
- - "sch $ * * * * * $ example.echo('Minute is gone')"
- - "ait $ example.get_time $ no-provide" 
+  cmd:
+    - command: echo
+      method: example.echo
+      args:
+        text: str
+  sch:
+    - name: every_minute
+      time: "* * * * *"
+      method: example.echo
+      args:
+        text: "Minute is gone"
+  ait:
+    - name: current_time_aitool
+      method: example.get_time
+      description: "This method return current time"
+  api:
+    - name: echo_api
+      method: example.echo
+      args:
+        text: str
+      endpoint: "echo/<text>

@@ -1,6 +1,6 @@
-project:
-  name: Example project
-  codename: example-project
+plugin:
+  name: Example plugin
+  codename: example-plugin
 
 buckets:
   default-bucket:
@@ -14,14 +14,14 @@ triggers:
       command: echo <text>
       method: example.echo(text)
       args:
-        text: str
-  schedulers:
+        text: "Вы ничего не написали...:str"
+  scheduled:
     - name: every_minute
       time: "* * * * *"
       method: example.echo
       args:
         text: "Minute is gone"
-  aitools:
+  ai_tools:
     - name: current_time_aitool
       method: example.get_time
       description: "This method return current time"

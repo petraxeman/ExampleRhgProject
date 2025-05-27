@@ -4,9 +4,9 @@ plugin:
 
 buckets:
   default-bucket:
-    access: common # can be common or personal
-    type: list     # can be list or dict
-    encrypt: false # can be false or true, default false
+    access: common
+    type: list
+    encrypt: false
 
 triggers:
   commands:

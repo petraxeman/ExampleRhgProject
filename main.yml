@@ -12,7 +12,8 @@ triggers:
   commands:
     - name: echo-command
       command: echo <text>
-      method: example.echo(text)
+      method: example.echo
+      help: This command will reply same message what you send for.
       args:
         text: "Вы ничего не написали...:str"
   scheduled:

@@ -11,7 +11,7 @@ buckets:
 triggers:
   commands:
     - name: echo-command
-      command: echo <text>
+      command: echo
       method: example.echo
       help: This command will reply same message what you send for.
       args:

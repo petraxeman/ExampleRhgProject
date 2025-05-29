@@ -1,14 +1,19 @@
 plugin:
   name: Example plugin
   codename: example-plugin
+  description: This is example module
 
 buckets:
-  default-bucket:
+  - codename: rights
+  - codename: default-bucket
     access: common
     type: list
     encrypt: false
 
 triggers:
+  specific:
+    init: example.init
+  
   commands:
     - name: echo-command
       command: echo
@@ -16,6 +21,13 @@ triggers:
       help: This command will reply same message what you send for.
       args:
         text: "Вы ничего не написали...:str"
+    - name: Echo with joke
+      command: sepc-echo
+      method: example.spec-echo
+      help: This command will reply same message what you send for but it need right.
+      args:
+        text: "Вы ничего не написали...:str"
+      rights: [specific-right]
   scheduled:
     - name: every_minute
       time: "* * * * *"

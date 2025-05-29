@@ -1,9 +1,11 @@
-CurrentMessage = import("CurrentMessage")
+CurrentMessage = import("py:current_message")
 
 function echo(text)
     CurrentMessage.reply_text("You said: " .. text)
 end
 
-function get_time()
-    return "12.12.2024 12:00"
+function spec-echo(text)
+    CurrentMessage.reply_text("You said: " .. text .. " And you have rights for that.")
 end
+
+function init(sender)

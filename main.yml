@@ -1,81 +1,17 @@
 plugin:
-  name: Wallet
-  codename: wallet
-  description: This plugin provide functionality for payment.
+  name: Example plugin
+  codename: example-plugin
+  description: This plugin is just example, but it works.
 
 bukcets:
   - codename: rights
-  
-  - codename: user-wallets
-    type: dict
-
-  - codename: cb
-    type: dict
 
 triggers:
-  specific:
-    init: specific.init
-  
   commands:
-    - name: Pay
-      command: pay
-      method: payment.pay
-      help: Send money to user
+    - name: Echo command
+      help: Repeats the given text
+      command: echo
+      method: main.echo
       args:
-        username: str
-        count: int
-      
-    - name: Burn
-      command: burn
-      method: payment.burn
-      help: Burn your money
-      args:
-        count: int
-      
-    - name: Make a deal
-      command: deal
-      method: payment.deal
-      help: None
-      args:
-        username: str
-        count: int
-    
-    - name: Get CB status
-      command: cb-status
-      method: cb.status
-      help: Return status of CB
-
-    - name: Produce money
-      command: produce-money
-      method: cb.produce
-      help: Produce money in CB
-      args:
-        count: int
-      rights: [cb-produce]
-
-    - name: Burn money in CB
-      command: burn-money
-      method: cb.burn
-      help: Burn money in CB
-      args:
-        count: int
-      rights: [cb-burn]
-
-    - name: Send money as CB
-      command: send-money
-      method: cb.send
-      help: Send money as CB
-      args:
-        username: str
-        count: int
-      rights: [cb-send]
-    
-    - name: Consume money from user wallet
-      command: consume-money
-      method: cb.consume
-      help: Consume money from user wallet
-      args:
-        username: str
-        count: int
-      rights: [cb-consume]
+        text: {d: "Вы не написали текст...", t: str}    
     
